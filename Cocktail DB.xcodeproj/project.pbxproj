@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A002CD124B8EE830040F9D5 /* DrinksTableViewViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A002CD024B8EE830040F9D5 /* DrinksTableViewViewModelType.swift */; };
+		1A002CD324B8F6440040F9D5 /* DrinkTableViewCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A002CD224B8F6440040F9D5 /* DrinkTableViewCellViewModelType.swift */; };
 		1A4A6CA024B862AC00E60AA0 /* DrinksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A6C9E24B862AC00E60AA0 /* DrinksTableViewCell.swift */; };
 		1A4A6CA124B862AC00E60AA0 /* DrinksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A4A6C9F24B862AC00E60AA0 /* DrinksTableViewCell.xib */; };
 		1A4A6CA524B8640F00E60AA0 /* RequestManagerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A6CA424B8640F00E60AA0 /* RequestManagerConstants.swift */; };
@@ -28,6 +30,8 @@
 /* Begin PBXFileReference section */
 		024A6B04EB56D645E6CE62C5 /* Pods-Cocktail DB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cocktail DB.release.xcconfig"; path = "Target Support Files/Pods-Cocktail DB/Pods-Cocktail DB.release.xcconfig"; sourceTree = "<group>"; };
 		0482B7D88648D6E6475327AE /* Pods-Cocktail DB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cocktail DB.debug.xcconfig"; path = "Target Support Files/Pods-Cocktail DB/Pods-Cocktail DB.debug.xcconfig"; sourceTree = "<group>"; };
+		1A002CD024B8EE830040F9D5 /* DrinksTableViewViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksTableViewViewModelType.swift; sourceTree = "<group>"; };
+		1A002CD224B8F6440040F9D5 /* DrinkTableViewCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkTableViewCellViewModelType.swift; sourceTree = "<group>"; };
 		1A4A6C9E24B862AC00E60AA0 /* DrinksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksTableViewCell.swift; sourceTree = "<group>"; };
 		1A4A6C9F24B862AC00E60AA0 /* DrinksTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrinksTableViewCell.xib; sourceTree = "<group>"; };
 		1A4A6CA424B8640F00E60AA0 /* RequestManagerConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManagerConstants.swift; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 		1A4A6CD024B89A8B00E60AA0 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				1A002CD024B8EE830040F9D5 /* DrinksTableViewViewModelType.swift */,
+				1A002CD224B8F6440040F9D5 /* DrinkTableViewCellViewModelType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -362,6 +368,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A002CD124B8EE830040F9D5 /* DrinksTableViewViewModelType.swift in Sources */,
+				1A002CD324B8F6440040F9D5 /* DrinkTableViewCellViewModelType.swift in Sources */,
 				1A4A6CAC24B8656E00E60AA0 /* DrinksModel.swift in Sources */,
 				1A5081ED24B8A13200801FC0 /* DrinksTableViewCellViewModel.swift in Sources */,
 				1ADE513724B852F70026B52C /* DrinksViewController.swift in Sources */,

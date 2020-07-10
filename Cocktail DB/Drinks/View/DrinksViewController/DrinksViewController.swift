@@ -12,14 +12,12 @@ class DrinksViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    private var viewModel: DrinksViewModel?
+    private var viewModel: DrinksTableViewViewModelType = DrinksViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareTableView()
-        viewModel?.loadDrinks() { [weak self] in
-            self?.tableView.reloadData()
-        }
+
     }
     
     func prepareTableView() {
@@ -31,8 +29,15 @@ class DrinksViewController: UIViewController {
         tableView.register(UINib.init(nibName: String(describing: DrinksTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: DrinksTableViewCell.self))
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.loadDrinks() { [unowned self] in
+            self.tableView.reloadData()
+        }
+    }
+    
     @IBAction func filterButtonAction(_ sender: UIBarButtonItem) {
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
     
 }
@@ -44,16 +49,17 @@ extension DrinksViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.numberOfRows() ?? 0
+        return viewModel.numberOfRows()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DrinksTableViewCell.self)) as? DrinksTableViewCell
-        guard let tableViewCell = cell, let viewModel = viewModel else { return UITableViewCell() }
+        guard let tableViewCell = cell else { return UITableViewCell() }
         
         let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
         tableViewCell.viewModel = cellViewModel
-        
+
         return tableViewCell
     }
     

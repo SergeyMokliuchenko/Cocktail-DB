@@ -9,7 +9,7 @@
 import Foundation
 import Kingfisher
 
-class DrinksTableViewCellViewModel {
+class DrinksTableViewCellViewModel: DrinkTableViewCellViewModelType {
     
     private var drink: Drink
     
@@ -23,15 +23,19 @@ class DrinksTableViewCellViewModel {
     
     private func loadImage(string url: String) -> UIImage {
         
-        guard let url: URL = URL(string: url) else { return UIImage() }
-            
-        if let data = try? Data(contentsOf: url) {
-            let image: UIImage = UIImage(data: data)!
-
-            return image
-        }
+        var image: UIImage = UIImage()
+        guard let url: URL = URL(string: url) else { return image }
         
-        return UIImage()
+        KingfisherManager.shared.retrieveImage(with: url) { result in
+            
+            switch result {
+            case .success(let value):
+                image = value.image
+            case .failure(let error):
+                print(error)
+            }
+        }
+        return image
     }
     
     init(drink: Drink) {

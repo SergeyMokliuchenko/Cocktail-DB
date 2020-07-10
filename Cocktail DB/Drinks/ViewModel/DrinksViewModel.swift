@@ -8,10 +8,20 @@
 
 import Foundation
 
-class DrinksViewModel {
+class DrinksViewModel: DrinksTableViewViewModelType {
     
     private var dataProvider: DataProvider = RequestManager()
     private var drinks: [Drink] = []
+    
+    func numberOfRows() -> Int {
+        return drinks.count
+    }
+    
+    func cellViewModel(forIndexPath indexPath: IndexPath) -> DrinkTableViewCellViewModelType? {
+        let drink = drinks[indexPath.row]
+         
+        return DrinksTableViewCellViewModel(drink: drink)
+    }
     
     func loadDrinks(completion: @escaping () -> Void) {
         dataProvider.loadDrinks { [unowned self] response in
@@ -21,19 +31,8 @@ class DrinksViewModel {
                 drinks.append(drink)
             }
             self.drinks = drinks
-            
             completion()
         }
-    }
-    
-    func numberOfRows() -> Int {
-        return drinks.count
-    }
-    
-    func cellViewModel(forIndexPath indexPath: IndexPath) -> DrinksTableViewCellViewModel? {
-        let drink = drinks[indexPath.row]
-         
-        return DrinksTableViewCellViewModel(drink: drink)
     }
     
 }
