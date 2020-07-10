@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,9 +13,12 @@
 		1ADE513A24B852F70026B52C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ADE513824B852F70026B52C /* Main.storyboard */; };
 		1ADE513C24B852FA0026B52C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ADE513B24B852FA0026B52C /* Assets.xcassets */; };
 		1ADE513F24B852FA0026B52C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ADE513D24B852FA0026B52C /* LaunchScreen.storyboard */; };
+		C1CB3EE2667F7AA0CFD8A7DC /* Pods_Cocktail_DB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7682898809ABD6501B1BB1F4 /* Pods_Cocktail_DB.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		024A6B04EB56D645E6CE62C5 /* Pods-Cocktail DB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cocktail DB.release.xcconfig"; path = "Target Support Files/Pods-Cocktail DB/Pods-Cocktail DB.release.xcconfig"; sourceTree = "<group>"; };
+		0482B7D88648D6E6475327AE /* Pods-Cocktail DB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cocktail DB.debug.xcconfig"; path = "Target Support Files/Pods-Cocktail DB/Pods-Cocktail DB.debug.xcconfig"; sourceTree = "<group>"; };
 		1ADE512F24B852F70026B52C /* Cocktail DB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cocktail DB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ADE513224B852F70026B52C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1ADE513424B852F70026B52C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		1ADE513B24B852FA0026B52C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1ADE513E24B852FA0026B52C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1ADE514024B852FA0026B52C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7682898809ABD6501B1BB1F4 /* Pods_Cocktail_DB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cocktail_DB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1CB3EE2667F7AA0CFD8A7DC /* Pods_Cocktail_DB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A3D4C7C6AC9EAF18DB08254 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7682898809ABD6501B1BB1F4 /* Pods_Cocktail_DB.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0D0336E2B7E8527B95F47913 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0482B7D88648D6E6475327AE /* Pods-Cocktail DB.debug.xcconfig */,
+				024A6B04EB56D645E6CE62C5 /* Pods-Cocktail DB.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		1ADE512624B852F70026B52C = {
 			isa = PBXGroup;
 			children = (
 				1ADE513124B852F70026B52C /* Cocktail DB */,
 				1ADE513024B852F70026B52C /* Products */,
+				0D0336E2B7E8527B95F47913 /* Pods */,
+				0A3D4C7C6AC9EAF18DB08254 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +80,87 @@
 		1ADE513124B852F70026B52C /* Cocktail DB */ = {
 			isa = PBXGroup;
 			children = (
-				1ADE513224B852F70026B52C /* AppDelegate.swift */,
-				1ADE513424B852F70026B52C /* SceneDelegate.swift */,
-				1ADE513624B852F70026B52C /* ViewController.swift */,
-				1ADE513824B852F70026B52C /* Main.storyboard */,
-				1ADE513B24B852FA0026B52C /* Assets.xcassets */,
-				1ADE513D24B852FA0026B52C /* LaunchScreen.storyboard */,
-				1ADE514024B852FA0026B52C /* Info.plist */,
+				1ADE514724B854C20026B52C /* Application */,
+				1ADE514B24B854FB0026B52C /* Cocktail */,
+				1ADE514624B8546E0026B52C /* SupportingFiles */,
 			);
 			path = "Cocktail DB";
+			sourceTree = "<group>";
+		};
+		1ADE514624B8546E0026B52C /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				1ADE513B24B852FA0026B52C /* Assets.xcassets */,
+				1ADE514024B852FA0026B52C /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		1ADE514724B854C20026B52C /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				1ADE514A24B854D70026B52C /* Model */,
+				1ADE514924B854D20026B52C /* View */,
+				1ADE514824B854CC0026B52C /* Controller */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		1ADE514824B854CC0026B52C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1ADE513224B852F70026B52C /* AppDelegate.swift */,
+				1ADE513424B852F70026B52C /* SceneDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1ADE514924B854D20026B52C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1ADE513D24B852FA0026B52C /* LaunchScreen.storyboard */,
+				1ADE513824B852F70026B52C /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1ADE514A24B854D70026B52C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1ADE514B24B854FB0026B52C /* Cocktail */ = {
+			isa = PBXGroup;
+			children = (
+				1ADE514E24B8551D0026B52C /* Model */,
+				1ADE514D24B855150026B52C /* View */,
+				1ADE514C24B8550E0026B52C /* Controller */,
+			);
+			path = Cocktail;
+			sourceTree = "<group>";
+		};
+		1ADE514C24B8550E0026B52C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1ADE513624B852F70026B52C /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1ADE514D24B855150026B52C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1ADE514E24B8551D0026B52C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +170,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1ADE514324B852FA0026B52C /* Build configuration list for PBXNativeTarget "Cocktail DB" */;
 			buildPhases = (
+				1883FCA86D4D7650E49AA039 /* [CP] Check Pods Manifest.lock */,
 				1ADE512B24B852F70026B52C /* Sources */,
 				1ADE512C24B852F70026B52C /* Frameworks */,
 				1ADE512D24B852F70026B52C /* Resources */,
+				FDE46EC042720F36BF46E994 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +230,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1883FCA86D4D7650E49AA039 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Cocktail DB-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDE46EC042720F36BF46E994 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cocktail DB/Pods-Cocktail DB-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cocktail DB/Pods-Cocktail DB-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Cocktail DB/Pods-Cocktail DB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1ADE512B24B852F70026B52C /* Sources */ = {
@@ -282,11 +422,12 @@
 		};
 		1ADE514424B852FA0026B52C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0482B7D88648D6E6475327AE /* Pods-Cocktail DB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DCY898TRP5;
-				INFOPLIST_FILE = "Cocktail DB/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Cocktail DB/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,11 +441,12 @@
 		};
 		1ADE514524B852FA0026B52C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 024A6B04EB56D645E6CE62C5 /* Pods-Cocktail DB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DCY898TRP5;
-				INFOPLIST_FILE = "Cocktail DB/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Cocktail DB/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
