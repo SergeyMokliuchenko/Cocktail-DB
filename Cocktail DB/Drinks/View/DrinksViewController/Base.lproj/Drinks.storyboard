@@ -29,7 +29,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Drinck" id="hMT-qn-7nl"/>
+                    <navigationItem key="navigationItem" title="Drinck" id="hMT-qn-7nl">
+                        <barButtonItem key="rightBarButtonItem" title="Filter" id="Avr-XB-3Ml">
+                            <connections>
+                                <action selector="filterButtonAction:" destination="BYZ-38-t0r" id="lK2-4I-Ilg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="2sr-8o-DoC" id="oHd-yF-E6T"/>
                     </connections>

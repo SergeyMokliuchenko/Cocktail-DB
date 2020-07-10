@@ -1,5 +1,5 @@
 //
-//  DrinkFiltersModel.swift
+//  DataProvider.swift
 //  Cocktail DB
 //
 //  Created by Serhii Mokliuchenko on 10.07.2020.
@@ -8,4 +8,7 @@
 
 import Foundation
 
-
+protocol DataProvider {
+    
+    func loadDrinks(completion: @escaping (DrinksModel) -> Void)
+}

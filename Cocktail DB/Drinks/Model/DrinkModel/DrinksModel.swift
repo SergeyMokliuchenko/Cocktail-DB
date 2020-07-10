@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DrinkModel: Decodable {
+struct DrinksModel: Decodable {
     
     let drinks: [Drink]
     
@@ -16,13 +16,13 @@ struct DrinkModel: Decodable {
 
 struct Drink: Decodable {
     
-    let drink: String
-    let drinkThumb: String
+    let name: String
+    let imageURL: String
     let id: String
     
     enum CodingKeys: String, CodingKey {
-        case drink = "strDrink"
-        case drinkThumb = "strDrinkThumb"
+        case name = "strDrink"
+        case imageURL = "strDrinkThumb"
         case id = "idDrink"
     }
 }

@@ -7,31 +7,22 @@
 //
 
 import UIKit
-import Kingfisher
 
 class DrinksTableViewCell: UITableViewCell {
     
     @IBOutlet weak var drinkImageView: UIImageView!
     @IBOutlet weak var drinkNameLabel: UILabel!
     
+    var viewModel: DrinksTableViewCellViewModel? {
+        didSet {
+            guard let viewModel = viewModel else { return }
+            drinkImageView.image = viewModel.image
+            drinkNameLabel.text = viewModel.name
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
-    func fillWith(model: Drink) {
-        self.drinkNameLabel.text = model.drink
-        guard let url = URL(string: model.drinkThumb) else { return }
-        loadImage(with: url)
-    }
-    
-    func loadImage(with url: URL) {
-        self.drinkImageView.kf.setImage(with: url)
     }
 }
