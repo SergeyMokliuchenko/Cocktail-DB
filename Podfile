@@ -7,6 +7,7 @@ target 'Cocktail DB' do
 
   pod 'Alamofire'
   pod 'Kingfisher'
+  pod 'PaginatedTableView'
 
   # Pods for Cocktail DB
 

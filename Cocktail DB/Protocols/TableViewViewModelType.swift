@@ -10,8 +10,11 @@ import Foundation
 
 protocol TableViewViewModelType {
     
-    func numberOfRows() -> Int
+    func numberOfRowsCategory() -> Int
+    func headerTitlesSection(with section: Int) -> String
+    func numberOfRowsDrinks() -> Int
     func cellViewModel(forIndexPath indexPath: IndexPath) -> TableViewCellViewModelType?
+    func loadDrinksCategory(completion: @escaping () -> Void)
     func loadDrinks(completion: @escaping () -> Void)
     
 }

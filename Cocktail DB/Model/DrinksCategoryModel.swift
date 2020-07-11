@@ -10,13 +10,12 @@ import Foundation
 
 struct DrinksCategoryModel: Decodable {
     
-    let drinks: [Category]
+    var drinks: [Category]
 }
 
 struct Category: Decodable {
     
     let name: String
-    var isSelected: Bool = true
     
     enum CodingKeys: String, CodingKey {
         case name = "strCategory"

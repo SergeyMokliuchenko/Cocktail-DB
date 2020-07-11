@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FiltersTableViewViewModel: TableViewViewModelType {
+class FiltersTableViewViewModel {
     
     private var dataProvider: DataProvider = RequestManager()
     private var filters: [Category] = []
@@ -24,7 +24,7 @@ class FiltersTableViewViewModel: TableViewViewModelType {
     }
     
     func loadDrinks(completion: @escaping () -> Void) {
-        dataProvider.loadDrinksCategory { [unowned self] response in
+        dataProvider.loadDrinksCategories { [unowned self] response in
             var filters: [Category] = []
             
             for filter in response.drinks {

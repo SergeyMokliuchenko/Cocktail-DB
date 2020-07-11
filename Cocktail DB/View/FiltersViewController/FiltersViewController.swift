@@ -12,14 +12,9 @@ class FiltersViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var viewModel: TableViewViewModelType = FiltersTableViewViewModel()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareTableView()
-        viewModel.loadDrinks { [unowned self] in
-            self.tableView.reloadData()
-        }
     }
     
     func prepareTableView() {
@@ -39,7 +34,7 @@ class FiltersViewController: UIViewController {
 extension FiltersViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfRows()
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,8 +42,6 @@ extension FiltersViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FilterTableViewCell.self)) as? FilterTableViewCell
         guard let tableViewCell = cell else { return UITableViewCell() }
         
-        let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
-        tableViewCell.viewModel = cellViewModel
         
         return tableViewCell
     }
