@@ -10,14 +10,29 @@ import Foundation
 import Alamofire
 
 struct RequestManager: DataProvider {
+    
+    private func alamofireRequest<T: Decodable>(with url: String, parameters: Parameters, model: T.Type, completion: @escaping (T) -> Void) {
+        AF.request(url, method: .get, parameters: parameters).validate().responseDecodable(of: model.self) { response in
+            guard let drinks = response.value else { return }
+            completion(drinks)
+        }
+    }
 
     func loadDrinks(completion: @escaping (DrinksModel) -> Void) {
         let url = RequestManagerConstants.baseURL + "api/json/v1/1/filter.php"
-        let params: Parameters = ["c" : "Coffee / Tea"]
-        AF.request(url, method: .get, parameters: params).validate().responseDecodable(of: DrinksModel.self) { response in
-            guard let weather = response.value else { return }
-            completion(weather)
+        let parameters: Parameters = ["c" : "Ordinary Drink"]
+
+        alamofireRequest(with: url, parameters: parameters, model: DrinksModel.self) { response in
+            completion(response)
         }
     }
     
+    func loadDrinksCategory(completion: @escaping (DrinksCategoryModel) -> Void) {
+        let url = RequestManagerConstants.baseURL + "api/json/v1/1/list.php"
+        let parameters: Parameters = ["c" : "list"]
+        
+        alamofireRequest(with: url, parameters: parameters, model: DrinksCategoryModel.self) { response in
+            completion(response)
+        }
+    }
 }

@@ -11,4 +11,5 @@ import Foundation
 protocol DataProvider {
     
     func loadDrinks(completion: @escaping (DrinksModel) -> Void)
+    func loadDrinksCategory(completion: @escaping (DrinksCategoryModel) -> Void)
 }

@@ -12,7 +12,7 @@ class DrinksViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    private var viewModel: DrinksTableViewViewModelType = DrinksViewModel()
+    private var viewModel: TableViewViewModelType = DrinksViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,8 @@ class DrinksViewController: UIViewController {
     }
     
     @IBAction func filterButtonAction(_ sender: UIBarButtonItem) {
-        tableView.reloadData()
+        let filtersViewControlelr = FiltersViewController.init()
+        self.navigationController?.pushViewController(filtersViewControlelr, animated: true)
     }
     
 }

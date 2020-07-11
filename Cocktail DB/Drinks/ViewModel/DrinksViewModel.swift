@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DrinksViewModel: DrinksTableViewViewModelType {
+class DrinksViewModel: TableViewViewModelType {
     
     private var dataProvider: DataProvider = RequestManager()
     private var drinks: [Drink] = []
@@ -17,7 +17,7 @@ class DrinksViewModel: DrinksTableViewViewModelType {
         return drinks.count
     }
     
-    func cellViewModel(forIndexPath indexPath: IndexPath) -> DrinkTableViewCellViewModelType? {
+    func cellViewModel(forIndexPath indexPath: IndexPath) -> TableViewCellViewModelType? {
         let drink = drinks[indexPath.row]
          
         return DrinksTableViewCellViewModel(drink: drink)
@@ -30,9 +30,8 @@ class DrinksViewModel: DrinksTableViewViewModelType {
             for drink in response.drinks {
                 drinks.append(drink)
             }
-            self.drinks = drinks
+            self.drinks += drinks
             completion()
         }
-    }
-    
+    }    
 }

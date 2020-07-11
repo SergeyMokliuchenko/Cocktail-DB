@@ -1,5 +1,5 @@
 //
-//  DrinkTableViewCellViewModelType.swift
+//  TableViewCellViewModelType.swift
 //  Cocktail DB
 //
 //  Created by Serhii Mokliuchenko on 10.07.2020.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-protocol DrinkTableViewCellViewModelType: class {
+protocol TableViewCellViewModelType: class {
     
     var name: String { get }
-    var image: UIImage { get }
+    var image: UIImage? { get }
     
 }

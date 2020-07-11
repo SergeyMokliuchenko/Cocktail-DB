@@ -9,7 +9,7 @@
 import Foundation
 import Kingfisher
 
-class DrinksTableViewCellViewModel: DrinkTableViewCellViewModelType {
+class DrinksTableViewCellViewModel: TableViewCellViewModelType {
     
     private var drink: Drink
     
@@ -17,7 +17,7 @@ class DrinksTableViewCellViewModel: DrinkTableViewCellViewModelType {
         return drink.name
     }
     
-    var image: UIImage {
+    var image: UIImage? {
         return loadImage(string: drink.imageURL)
     }
     

@@ -14,7 +14,7 @@ class DrinksTableViewCell: UITableViewCell {
     @IBOutlet weak var drinkNameLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    weak var viewModel: DrinkTableViewCellViewModelType? {
+    weak var viewModel: TableViewCellViewModelType? {
         willSet(viewModel) {
             guard let viewModel = viewModel else { return }
             drinkImageView.image = viewModel.image

@@ -1,5 +1,5 @@
 //
-//  DrinksTableViewViewModelType.swift
+//  TableViewViewModelType.swift
 //  Cocktail DB
 //
 //  Created by Serhii Mokliuchenko on 10.07.2020.
@@ -8,10 +8,10 @@
 
 import Foundation
 
-protocol DrinksTableViewViewModelType {
+protocol TableViewViewModelType {
     
     func numberOfRows() -> Int
-    func cellViewModel(forIndexPath indexPath: IndexPath) -> DrinkTableViewCellViewModelType?
+    func cellViewModel(forIndexPath indexPath: IndexPath) -> TableViewCellViewModelType?
     func loadDrinks(completion: @escaping () -> Void)
     
 }
