@@ -8,13 +8,24 @@
 
 import Foundation
 
-protocol TableViewViewModelType {
+protocol DrinksViewModelType: FilterCategoryDelegate {
     
-    func numberOfRowsCategory() -> Int
-    func headerTitlesSection(with section: Int) -> String
-    func numberOfRowsDrinks() -> Int
-    func cellViewModel(forIndexPath indexPath: IndexPath) -> TableViewCellViewModelType?
-    func loadDrinksCategory(completion: @escaping () -> Void)
-    func loadDrinks(completion: @escaping () -> Void)
+    func takeSections() -> [SectionsModel]
+    
+    func selectedCategory() -> [SectionsModel]
+    
+    func numberOfSections() -> Int
+    
+    func titleForHeaderInSection(section: Int) -> String
+    
+    func numberOfRowsInSection(section: Int) -> Int
+    
+    func pagination(forRowAt indexPath: IndexPath, completion: @escaping () -> Void)
+    
+    func loadDrinksCategories(completion: @escaping () -> Void)
+    
+    func loadDrinks(name: String, completion: @escaping () -> Void)
+    
+    //func selectedFilter(sections: [SectionsModel])
     
 }

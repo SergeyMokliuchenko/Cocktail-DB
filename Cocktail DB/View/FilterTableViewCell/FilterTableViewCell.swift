@@ -13,21 +13,30 @@ class FilterTableViewCell: UITableViewCell {
     @IBOutlet weak var filterNameLabel: UILabel!
     @IBOutlet weak var checkBoxButton: UIButton!
     
-    weak var viewModel: TableViewCellViewModelType? {
-        willSet(viewModel) {
-            guard let viewModel = viewModel else { return }
-            filterNameLabel.text = viewModel.name
-        }
-    }
+    var completion: ((String) -> Void)?
+    
+//    weak var viewModel: TableViewCellViewModelType? {
+//        willSet(viewModel) {
+//            guard let viewModel = viewModel else { return }
+//            filterNameLabel.text = viewModel.name
+//        }
+//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
-        checkBoxButton.isSelected = true
+        filterNameLabel.font = UIFont(name: "Roboto-Regular", size: 16)
+    }
+    
+    func fillWith(model: SectionsModel) {
+        filterNameLabel.text = model.nameSection
+        checkBoxButton.isSelected = model.isSelected
     }
     
     @IBAction func checkBoxButton(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
+        guard let name = filterNameLabel.text else { return }
+        completion?(name)
     }
     
 }

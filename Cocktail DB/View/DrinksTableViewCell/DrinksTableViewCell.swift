@@ -27,6 +27,7 @@ class DrinksTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
+        drinkNameLabel.font = UIFont(name: "Roboto-Regular", size: 16)
         activityIndicator.startAnimating()
     }
     

@@ -16,27 +16,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2sr-8o-DoC">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="90" width="375" height="577"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lv1-nH-88q" customClass="NavigationBar" customModule="Cocktail_DB" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="7iS-5T-J84"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="2sr-8o-DoC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0M9-w8-0Qi"/>
+                            <constraint firstItem="2sr-8o-DoC" firstAttribute="top" secondItem="lv1-nH-88q" secondAttribute="bottom" id="JTC-xd-5LN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2sr-8o-DoC" secondAttribute="bottom" id="Kqd-Bg-5Ku"/>
-                            <constraint firstItem="2sr-8o-DoC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="M4z-TM-cz9"/>
+                            <constraint firstItem="lv1-nH-88q" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SyX-qu-jRb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2sr-8o-DoC" secondAttribute="trailing" id="WmA-Vh-GeR"/>
+                            <constraint firstItem="lv1-nH-88q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eeM-G0-dP5"/>
+                            <constraint firstItem="lv1-nH-88q" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="fZQ-SQ-Cdb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Drinks" id="hMT-qn-7nl">
-                        <barButtonItem key="rightBarButtonItem" title="Filter" id="Avr-XB-3Ml">
-                            <connections>
-                                <action selector="filterButtonAction:" destination="BYZ-38-t0r" id="lK2-4I-Ilg"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Drinks" id="hMT-qn-7nl"/>
                     <connections>
+                        <outlet property="customNavigationBar" destination="lv1-nH-88q" id="Gnz-hp-c6T"/>
                         <outlet property="tableView" destination="2sr-8o-DoC" id="oHd-yF-E6T"/>
                     </connections>
                 </viewController>
@@ -47,10 +52,9 @@
         <!--Navigation Controller-->
         <scene sceneID="3Lg-rb-c6z">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v3H-cI-LkT" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="v3H-cI-LkT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="a97-aA-ddM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

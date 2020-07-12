@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FiltersViewController" customModule="Cocktail_DB" customModuleProvider="target">
             <connections>
+                <outlet property="customNavigationBar" destination="1Re-if-Ku2" id="YzZ-gH-HyW"/>
                 <outlet property="tableView" destination="8ze-2Z-Nzw" id="awY-Y0-wZK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,13 +20,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8ze-2Z-Nzw">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
+                    <rect key="frame" x="0.0" y="90" width="375" height="484"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppg-Mp-Ww9" userLabel="Apply Button">
-                    <rect key="frame" x="20" y="617" width="335" height="30"/>
+                    <rect key="frame" x="20" y="594" width="335" height="53"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="53" id="k8B-LH-XXi"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                     <state key="normal" title="APPLY">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
@@ -33,19 +37,29 @@
                         <action selector="applyButtonAction:" destination="-1" eventType="touchUpInside" id="2Md-Ae-s41"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Re-if-Ku2" customClass="NavigationBar" customModule="Cocktail_DB" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="mkv-Cy-I81"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ppg-Mp-Ww9" secondAttribute="bottom" constant="20" id="JXL-PV-gAR"/>
+                <constraint firstItem="Ppg-Mp-Ww9" firstAttribute="top" secondItem="8ze-2Z-Nzw" secondAttribute="bottom" constant="20" id="4QY-EH-wVn"/>
+                <constraint firstItem="1Re-if-Ku2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="6Pe-tz-1eF"/>
+                <constraint firstItem="1Re-if-Ku2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="GGE-E7-zmX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8ze-2Z-Nzw" secondAttribute="trailing" id="KnJ-5M-lWy"/>
-                <constraint firstItem="Ppg-Mp-Ww9" firstAttribute="top" secondItem="8ze-2Z-Nzw" secondAttribute="bottom" constant="20" id="MBx-Rr-ovU"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ppg-Mp-Ww9" secondAttribute="trailing" constant="20" id="OUT-N7-f3z"/>
+                <constraint firstItem="8ze-2Z-Nzw" firstAttribute="top" secondItem="1Re-if-Ku2" secondAttribute="bottom" id="Pru-T2-23r"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ppg-Mp-Ww9" secondAttribute="bottom" constant="20" id="T3v-cJ-ejB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ppg-Mp-Ww9" secondAttribute="trailing" constant="20" id="eaK-kR-NVe"/>
                 <constraint firstItem="8ze-2Z-Nzw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hMo-iU-LJg"/>
-                <constraint firstItem="Ppg-Mp-Ww9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="mfe-BK-r9z"/>
-                <constraint firstItem="8ze-2Z-Nzw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="nh8-D7-H7x"/>
+                <constraint firstItem="1Re-if-Ku2" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="lzG-EE-NuI"/>
+                <constraint firstItem="Ppg-Mp-Ww9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="sbI-AT-VmG"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="129"/>
+            <point key="canvasLocation" x="138.40000000000001" y="128.18590704647679"/>
         </view>
     </objects>
 </document>

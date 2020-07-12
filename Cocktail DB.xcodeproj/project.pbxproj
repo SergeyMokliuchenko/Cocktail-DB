@@ -20,7 +20,7 @@
 		1A5081ED24B8A13200801FC0 /* DrinksTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5081EC24B8A13200801FC0 /* DrinksTableViewCellViewModel.swift */; };
 		1A55844024B9144800D1B0B7 /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A55843E24B9144800D1B0B7 /* FiltersViewController.swift */; };
 		1A55844124B9144800D1B0B7 /* FiltersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A55843F24B9144800D1B0B7 /* FiltersViewController.xib */; };
-		1A55844324B9150800D1B0B7 /* FiltersTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A55844224B9150800D1B0B7 /* FiltersTableViewViewModel.swift */; };
+		1A55844324B9150800D1B0B7 /* FiltersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A55844224B9150800D1B0B7 /* FiltersViewModel.swift */; };
 		1A55844724B91C2400D1B0B7 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A55844524B91C2400D1B0B7 /* FilterTableViewCell.swift */; };
 		1A55844824B91C2400D1B0B7 /* FilterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A55844624B91C2400D1B0B7 /* FilterTableViewCell.xib */; };
 		1A55844B24B91EEC00D1B0B7 /* DrinksCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A55844A24B91EEC00D1B0B7 /* DrinksCategoryModel.swift */; };
@@ -31,6 +31,12 @@
 		1ADE513A24B852F70026B52C /* Drinks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ADE513824B852F70026B52C /* Drinks.storyboard */; };
 		1ADE513C24B852FA0026B52C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ADE513B24B852FA0026B52C /* Assets.xcassets */; };
 		1ADE513F24B852FA0026B52C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ADE513D24B852FA0026B52C /* LaunchScreen.storyboard */; };
+		1AE9146324BB12190043C52F /* FilterCategoryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE9146224BB12190043C52F /* FilterCategoryDelegate.swift */; };
+		1AE9146624BB9CF30043C52F /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AE9146524BB9CF30043C52F /* Roboto-Medium.ttf */; };
+		1AE9146824BB9D160043C52F /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AE9146724BB9D160043C52F /* Roboto-Regular.ttf */; };
+		1AE9146A24BB9D350043C52F /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AE9146924BB9D350043C52F /* Roboto-Bold.ttf */; };
+		1AE9146C24BBC39F0043C52F /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AE9146B24BBC39F0043C52F /* NavigationBar.xib */; };
+		1AE9146E24BBC5E60043C52F /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE9146D24BBC5E60043C52F /* NavigationBar.swift */; };
 		C1CB3EE2667F7AA0CFD8A7DC /* Pods_Cocktail_DB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7682898809ABD6501B1BB1F4 /* Pods_Cocktail_DB.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +56,7 @@
 		1A5081EC24B8A13200801FC0 /* DrinksTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		1A55843E24B9144800D1B0B7 /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		1A55843F24B9144800D1B0B7 /* FiltersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FiltersViewController.xib; sourceTree = "<group>"; };
-		1A55844224B9150800D1B0B7 /* FiltersTableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersTableViewViewModel.swift; sourceTree = "<group>"; };
+		1A55844224B9150800D1B0B7 /* FiltersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewModel.swift; sourceTree = "<group>"; };
 		1A55844524B91C2400D1B0B7 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
 		1A55844624B91C2400D1B0B7 /* FilterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterTableViewCell.xib; sourceTree = "<group>"; };
 		1A55844A24B91EEC00D1B0B7 /* DrinksCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksCategoryModel.swift; sourceTree = "<group>"; };
@@ -63,6 +69,12 @@
 		1ADE513B24B852FA0026B52C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1ADE513E24B852FA0026B52C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1ADE514024B852FA0026B52C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AE9146224BB12190043C52F /* FilterCategoryDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCategoryDelegate.swift; sourceTree = "<group>"; };
+		1AE9146524BB9CF30043C52F /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		1AE9146724BB9D160043C52F /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		1AE9146924BB9D350043C52F /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		1AE9146B24BBC39F0043C52F /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
+		1AE9146D24BBC5E60043C52F /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		7682898809ABD6501B1BB1F4 /* Pods_Cocktail_DB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cocktail_DB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -151,6 +163,7 @@
 			children = (
 				1A002CD024B8EE830040F9D5 /* TableViewViewModelType.swift */,
 				1A002CD224B8F6440040F9D5 /* TableViewCellViewModelType.swift */,
+				1AE9146224BB12190043C52F /* FilterCategoryDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -194,6 +207,7 @@
 		1ADE513124B852F70026B52C /* Cocktail DB */ = {
 			isa = PBXGroup;
 			children = (
+				1AE9146424BB9CE30043C52F /* Fonts */,
 				1A4A6CA224B863F300E60AA0 /* Constants */,
 				1A4A6CA624B864ED00E60AA0 /* DataProvider */,
 				1A4A6CD024B89A8B00E60AA0 /* Protocols */,
@@ -222,7 +236,7 @@
 			children = (
 				1A4A6CD124B89ABF00E60AA0 /* DrinksViewModel.swift */,
 				1A5081EC24B8A13200801FC0 /* DrinksTableViewCellViewModel.swift */,
-				1A55844224B9150800D1B0B7 /* FiltersTableViewViewModel.swift */,
+				1A55844224B9150800D1B0B7 /* FiltersViewModel.swift */,
 				1A9A213824B9A82F00A769FB /* FilterTableViewCellViewModel.swift */,
 			);
 			path = ViewModel;
@@ -235,6 +249,7 @@
 				1A4A6C9D24B8629200E60AA0 /* DrinksTableViewCell */,
 				1A55843D24B9141F00D1B0B7 /* FiltersViewController */,
 				1A55844424B91BF300D1B0B7 /* FilterTableViewCell */,
+				1AE9146F24BBC5F00043C52F /* NavigationBar */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -247,6 +262,25 @@
 				1A15DE4A24BA0EEC006D4249 /* SectionsModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1AE9146424BB9CE30043C52F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1AE9146524BB9CF30043C52F /* Roboto-Medium.ttf */,
+				1AE9146724BB9D160043C52F /* Roboto-Regular.ttf */,
+				1AE9146924BB9D350043C52F /* Roboto-Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		1AE9146F24BBC5F00043C52F /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				1AE9146D24BBC5E60043C52F /* NavigationBar.swift */,
+				1AE9146B24BBC39F0043C52F /* NavigationBar.xib */,
+			);
+			path = NavigationBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,7 +345,11 @@
 			files = (
 				1ADE513F24B852FA0026B52C /* LaunchScreen.storyboard in Resources */,
 				1A55844824B91C2400D1B0B7 /* FilterTableViewCell.xib in Resources */,
+				1AE9146824BB9D160043C52F /* Roboto-Regular.ttf in Resources */,
 				1ADE513C24B852FA0026B52C /* Assets.xcassets in Resources */,
+				1AE9146624BB9CF30043C52F /* Roboto-Medium.ttf in Resources */,
+				1AE9146A24BB9D350043C52F /* Roboto-Bold.ttf in Resources */,
+				1AE9146C24BBC39F0043C52F /* NavigationBar.xib in Resources */,
 				1A55844124B9144800D1B0B7 /* FiltersViewController.xib in Resources */,
 				1A4A6CA124B862AC00E60AA0 /* DrinksTableViewCell.xib in Resources */,
 				1ADE513A24B852F70026B52C /* Drinks.storyboard in Resources */,
@@ -369,10 +407,11 @@
 			files = (
 				1A002CD124B8EE830040F9D5 /* TableViewViewModelType.swift in Sources */,
 				1A002CD324B8F6440040F9D5 /* TableViewCellViewModelType.swift in Sources */,
-				1A55844324B9150800D1B0B7 /* FiltersTableViewViewModel.swift in Sources */,
+				1A55844324B9150800D1B0B7 /* FiltersViewModel.swift in Sources */,
 				1A55844024B9144800D1B0B7 /* FiltersViewController.swift in Sources */,
 				1A4A6CAC24B8656E00E60AA0 /* DrinksModel.swift in Sources */,
 				1A55844B24B91EEC00D1B0B7 /* DrinksCategoryModel.swift in Sources */,
+				1AE9146324BB12190043C52F /* FilterCategoryDelegate.swift in Sources */,
 				1A5081ED24B8A13200801FC0 /* DrinksTableViewCellViewModel.swift in Sources */,
 				1ADE513724B852F70026B52C /* DrinksViewController.swift in Sources */,
 				1ADE513324B852F70026B52C /* AppDelegate.swift in Sources */,
@@ -381,6 +420,7 @@
 				1A9A213924B9A82F00A769FB /* FilterTableViewCellViewModel.swift in Sources */,
 				1A4A6CB724B885C500E60AA0 /* DataProvider.swift in Sources */,
 				1ADE513524B852F70026B52C /* SceneDelegate.swift in Sources */,
+				1AE9146E24BBC5E60043C52F /* NavigationBar.swift in Sources */,
 				1A55844724B91C2400D1B0B7 /* FilterTableViewCell.swift in Sources */,
 				1A15DE4B24BA0EEC006D4249 /* SectionsModel.swift in Sources */,
 				1A4A6CA524B8640F00E60AA0 /* RequestManagerConstants.swift in Sources */,
