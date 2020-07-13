@@ -8,18 +8,20 @@
 
 import UIKit
 
-class FilterTableViewCellViewModel: TableViewCellViewModelType {
+class FilterTableViewCellViewModel: FilterTableViewCellViewModelType {
     
     
-    private var category: Category
+    private var category: SectionsModel
     
     var name: String {
-        return category.name
+        return category.nameSection
     }
     
-    var image: UIImage?
+    var isSelected: Bool {
+        return category.isSelected
+    }
     
-    init(category: Category) {
+    init(category: SectionsModel) {
         self.category = category
     }
 }

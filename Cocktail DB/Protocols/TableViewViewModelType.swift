@@ -26,6 +26,6 @@ protocol DrinksViewModelType: FilterCategoryDelegate {
     
     func loadDrinks(name: String, completion: @escaping () -> Void)
     
-    //func selectedFilter(sections: [SectionsModel])
+    //func selectedFilters(sections: [SectionsModel])
     
 }

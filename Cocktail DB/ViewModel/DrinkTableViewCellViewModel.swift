@@ -1,5 +1,5 @@
 //
-//  DrinksTableViewCellViewModel.swift
+//  DrinkTableViewCellViewModel.swift
 //  Cocktail DB
 //
 //  Created by Serhii Mokliuchenko on 10.07.2020.
@@ -9,7 +9,7 @@
 import Foundation
 import Kingfisher
 
-class DrinksTableViewCellViewModel: TableViewCellViewModelType {
+class DrinkTableViewCellViewModel: TableViewCellViewModelType {
     
     private var drink: Drink
     

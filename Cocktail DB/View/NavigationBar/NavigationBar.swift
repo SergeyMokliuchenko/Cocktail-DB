@@ -8,11 +8,6 @@
 
 import UIKit
 
-@objc protocol NavigationBarDelegate: class {
-    @objc optional func leftAction()
-    @objc optional func rightAction()
-}
-
 class NavigationBar: UIView {
     
     @IBOutlet var contentView: UIView!

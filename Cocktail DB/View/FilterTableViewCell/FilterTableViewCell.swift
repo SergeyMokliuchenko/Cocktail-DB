@@ -15,22 +15,17 @@ class FilterTableViewCell: UITableViewCell {
     
     var completion: ((String) -> Void)?
     
-//    weak var viewModel: TableViewCellViewModelType? {
-//        willSet(viewModel) {
-//            guard let viewModel = viewModel else { return }
-//            filterNameLabel.text = viewModel.name
-//        }
-//    }
+    weak var viewModel: FilterTableViewCellViewModelType? {
+        willSet(viewModel) {
+            guard let viewModel = viewModel else { return }
+            filterNameLabel.text = viewModel.name
+            checkBoxButton.isSelected = viewModel.isSelected
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
-        filterNameLabel.font = UIFont(name: "Roboto-Regular", size: 16)
-    }
-    
-    func fillWith(model: SectionsModel) {
-        filterNameLabel.text = model.nameSection
-        checkBoxButton.isSelected = model.isSelected
     }
     
     @IBAction func checkBoxButton(_ sender: UIButton) {

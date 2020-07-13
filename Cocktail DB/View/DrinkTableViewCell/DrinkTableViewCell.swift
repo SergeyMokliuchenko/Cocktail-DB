@@ -1,5 +1,5 @@
 //
-//  DrinksTableViewCell.swift
+//  DrinkTableViewCell.swift
 //  Cocktail DB
 //
 //  Created by Serhii Mokliuchenko on 10.07.2020.
@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class DrinksTableViewCell: UITableViewCell {
+class DrinkTableViewCell: UITableViewCell {
     
     @IBOutlet weak var drinkImageView: UIImageView!
     @IBOutlet weak var drinkNameLabel: UILabel!
@@ -27,7 +27,6 @@ class DrinksTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
-        drinkNameLabel.font = UIFont(name: "Roboto-Regular", size: 16)
         activityIndicator.startAnimating()
     }
     

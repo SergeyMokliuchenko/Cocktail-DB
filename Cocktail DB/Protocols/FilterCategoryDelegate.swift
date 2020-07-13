@@ -10,5 +10,5 @@ import Foundation
 
 protocol FilterCategoryDelegate {
     
-    func selectedFilter(sections: [SectionsModel])
+    func selectedFilters(sections: [SectionsModel])
 }

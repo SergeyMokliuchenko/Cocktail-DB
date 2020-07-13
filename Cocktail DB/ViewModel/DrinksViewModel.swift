@@ -17,7 +17,7 @@ class DrinksViewModel: DrinksViewModelType {
         return sections
     }
     
-    func selectedFilter(sections: [SectionsModel]) {
+    func selectedFilters(sections: [SectionsModel]) {
         self.sections = sections
     }
     

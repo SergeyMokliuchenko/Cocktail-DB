@@ -23,12 +23,15 @@ class DrinksViewController: UIViewController {
     }
     
     private func loadNavigationBar() {
+        
         navigationController?.setNavigationBarHidden(true, animated: false)
         customNavigationBar.delegate = self
         customNavigationBar.backButton.isHidden = true
+        
         customNavigationBar.leadingConstrain.constant = 30
         customNavigationBar.contentView.layer.shadowRadius = 4.0
         customNavigationBar.contentView.layer.shadowOpacity = 0.6
+        
         customNavigationBar.contentView.layer.shadowOffset = CGSize.zero
         customNavigationBar.headerLabel.text = "Drinks"
         customNavigationBar.headerLabel.font = UIFont(name: "Roboto-Medium", size: 24)
@@ -40,18 +43,14 @@ class DrinksViewController: UIViewController {
         tableView.dataSource = self
         tableView.separatorStyle = .none
         
-        tableView.register(UINib.init(nibName: String(describing: DrinksTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: DrinksTableViewCell.self))
+        tableView.register(UINib.init(nibName: String(describing: DrinkTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: DrinkTableViewCell.self))
     }
     
     private func loadDrinksCategories() {
-        
         viewModel.loadDrinksCategories() { [unowned self] in
             guard let name = self.viewModel.selectedCategory().first?.nameSection else { return }
             self.viewModel.loadDrinks(name: name) {
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-                
+                self.tableView.reloadData()
             }
         }
     }
@@ -65,16 +64,6 @@ class DrinksViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }
-    }
-    
-    @IBAction func filterButtonAction(_ sender: UIBarButtonItem) {
-        
-        let filtersViewControlelr = FiltersViewController.init()
-        filtersViewControlelr.viewModel.delegate = viewModel.self
-        
-        let category = viewModel.takeSections()
-        filtersViewControlelr.viewModel.getCategory(category: category)
-        self.navigationController?.pushViewController(filtersViewControlelr, animated: true)
     }
 }
 
@@ -94,7 +83,7 @@ extension DrinksViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DrinksTableViewCell.self)) as! DrinksTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DrinkTableViewCell.self)) as! DrinkTableViewCell
         
         let drink = viewModel.selectedCategory()[indexPath.section].drinks[indexPath.row]
         cell.fillWith(model: drink)

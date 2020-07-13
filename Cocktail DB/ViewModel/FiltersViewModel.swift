@@ -8,29 +8,35 @@
 
 import Foundation
 
-class FiltersViewModel {
+class FiltersViewModel: FiltersViewModelType {
     
     var delegate: FilterCategoryDelegate!
-    private var category: [SectionsModel] = []
+    private var categories: [SectionsModel] = []
     
     func getCategory(category: [SectionsModel]) {
-        self.category = category
+        self.categories = category
     }
     
-    func takeCategory() -> [SectionsModel] {
-        return category
+    func getSelectedCategory() -> [SectionsModel] {
+        return categories
     }
     
-    func numberOfRowsInSection1() -> Int {
-        return category.count
+    func numberOfRowsInSection() -> Int {
+        return categories.count
+    }
+    
+    func cellViewModel(forIndexPath indexPath: IndexPath) -> FilterTableViewCellViewModelType? {
+        let category = categories[indexPath.row]
+        return FilterTableViewCellViewModel(category: category)
     }
     
     func selectedFilter(name: String) {
-        category = category.map{ category -> SectionsModel in
-            
+        
+        categories = categories.map { category -> SectionsModel in
             if category.nameSection == name {
                 return SectionsModel(nameSection: name, drinks: [], isSelected: !category.isSelected)
             }
+            
             return category
         }
     }
