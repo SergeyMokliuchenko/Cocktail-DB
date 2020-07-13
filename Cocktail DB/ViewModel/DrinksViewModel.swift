@@ -64,4 +64,9 @@ class DrinksViewModel: DrinksViewModelType {
         let drink = sections.filter { $0.isSelected == true } [indexPath.section].drinks[indexPath.row]
         return DrinkTableViewCellViewModel(drink: drink)
     }
+    
+    func headerCellViewModel(forIndexPath section: Int) -> HeaderTableViewCellType {
+        let section = sections.filter { $0.isSelected == true }[section]
+        return HeaderTableViewCellViewModel(section: section)
+    }
 }

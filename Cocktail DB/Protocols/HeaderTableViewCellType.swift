@@ -1,5 +1,5 @@
 //
-//  NavigationBarDelegate.swift
+//  HeaderTableViewCellType.swift
 //  Cocktail DB
 //
 //  Created by Serhii Mokliuchenko on 13.07.2020.
@@ -8,8 +8,7 @@
 
 import Foundation
 
-@objc protocol NavigationBarDelegate: class {
+protocol HeaderTableViewCellType: class {
     
-    @objc optional func leftAction()
-    @objc optional func rightAction()
+    var headerName: String { get }
 }

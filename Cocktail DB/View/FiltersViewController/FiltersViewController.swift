@@ -19,7 +19,6 @@ class FiltersViewController: UIViewController {
         super.viewDidLoad()
         loadNavigationBar()
         prepareTableView()
-        
     }
     
     private func loadNavigationBar() {
@@ -52,7 +51,7 @@ class FiltersViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 }
-
+    //MARK: TableView Metods
 extension FiltersViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,7 +77,7 @@ extension FiltersViewController: UITableViewDelegate, UITableViewDataSource {
         return 70
     }
 }
-
+    //MARK: NavigationBarDelegate
 extension FiltersViewController: NavigationBarDelegate {
     
     func leftAction() {

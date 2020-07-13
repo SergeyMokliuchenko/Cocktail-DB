@@ -22,4 +22,6 @@ protocol DrinksViewModelType: FilterCategoryDelegate {
     
     func cellViewModel(forIndexPath indexPath: IndexPath) -> DrinkTableViewCellViewModelType
     
+    func headerCellViewModel(forIndexPath section: Int) -> HeaderTableViewCellType
+    
 }

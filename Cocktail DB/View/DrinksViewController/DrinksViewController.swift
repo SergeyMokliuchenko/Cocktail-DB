@@ -53,6 +53,7 @@ class DrinksViewController: UIViewController {
         tableView.separatorStyle = .none
         
         tableView.register(UINib.init(nibName: String(describing: DrinkTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: DrinkTableViewCell.self))
+        tableView.register(UINib.init(nibName: String(describing: HeaderTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: HeaderTableViewCell.self))
     }
     
     private func loadDrinksCategories() {
@@ -70,8 +71,19 @@ extension DrinksViewController: UITableViewDelegate, UITableViewDataSource {
         return viewModel.selectedCategory().count
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return viewModel.selectedCategory()[section].nameSection
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HeaderTableViewCell.self)) as? HeaderTableViewCell
+        guard let headerCell = cell else { return 44 }
+        return headerCell.bounds.height
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HeaderTableViewCell.self)) as? HeaderTableViewCell
+        guard let headerViewCell = cell else { return UIView() }
+        let cellViewModel = viewModel.headerCellViewModel(forIndexPath: section)
+        headerViewCell.viewModel = cellViewModel
+        
+        return headerViewCell.contentView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
