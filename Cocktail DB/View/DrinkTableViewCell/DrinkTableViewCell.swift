@@ -17,7 +17,7 @@ class DrinkTableViewCell: UITableViewCell {
         willSet(viewModel) {
             guard let viewModel = viewModel else { return }
             drinkNameLabel.text = viewModel.name
-            viewModel.downloadImageFromURL(url: viewModel.imageURL) { [weak self] image in
+            UIImage().downloadImageFromURL(url: viewModel.imageURL) { [weak self] image in
                 self?.drinkImageView.image = image
             }
         }
@@ -27,5 +27,4 @@ class DrinkTableViewCell: UITableViewCell {
         super.awakeFromNib()
         self.selectionStyle = .none
     }
-    
 }

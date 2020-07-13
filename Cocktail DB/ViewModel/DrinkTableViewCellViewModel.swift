@@ -20,16 +20,6 @@ class DrinkTableViewCellViewModel: DrinkTableViewCellViewModelType {
         return NSURL(string: drink.imageURL)!
     }
     
-    func downloadImageFromURL(url: NSURL, completion: @escaping (UIImage) -> Void) {
-        DispatchQueue.global(qos: .userInteractive).async {
-            guard let data = try? Data(contentsOf: url as URL),
-            let image = UIImage(data: data) else { return }
-            DispatchQueue.main.async {
-                completion(image)
-            }
-        }
-    }
-    
     init(drink: Drink) {
         self.drink = drink
     }

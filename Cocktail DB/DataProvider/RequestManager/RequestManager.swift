@@ -17,9 +17,18 @@ struct RequestManager: DataProvider {
             completion(drinks)
         }
     }
+    
+    func loadDrinksCategories(completion: @escaping (DrinksCategoryModel) -> Void) {
+        let url = RequestManagerConstants.baseURL + RequestManagerConstants.drinks
+        let parameters: Parameters = ["c" : "list"]
+        
+        alamofireRequest(with: url, parameters: parameters, model: DrinksCategoryModel.self) { response in
+            completion(response)
+        }
+    }
 
     func loadDrinks(with name: String, completion: @escaping (DrinksModel) -> Void) {
-        let url = RequestManagerConstants.baseURL + "api/json/v1/1/filter.php"
+        let url = RequestManagerConstants.baseURL + RequestManagerConstants.filters
         let parameters: Parameters = ["c" : name]
         
         alamofireRequest(with: url, parameters: parameters, model: DrinksModel.self) { response in
@@ -27,12 +36,4 @@ struct RequestManager: DataProvider {
         }
     }
     
-    func loadDrinksCategories(completion: @escaping (DrinksCategoryModel) -> Void) {
-        let url = RequestManagerConstants.baseURL + "api/json/v1/1/list.php"
-        let parameters: Parameters = ["c" : "list"]
-        
-        alamofireRequest(with: url, parameters: parameters, model: DrinksCategoryModel.self) { response in
-            completion(response)
-        }
-    }
 }

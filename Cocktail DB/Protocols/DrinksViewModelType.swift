@@ -10,15 +10,9 @@ import Foundation
 
 protocol DrinksViewModelType: FilterCategoryDelegate {
     
-    func takeSections() -> [SectionsModel]
+    func getSections() -> [SectionsModel]
     
     func selectedCategory() -> [SectionsModel]
-    
-    func numberOfSections() -> Int
-    
-    func titleForHeaderInSection(section: Int) -> String
-    
-    func numberOfRowsInSection(section: Int) -> Int
     
     func pagination(forRowAt indexPath: IndexPath, completion: @escaping () -> Void)
     
@@ -26,6 +20,6 @@ protocol DrinksViewModelType: FilterCategoryDelegate {
     
     func loadDrinks(name: String, completion: @escaping () -> Void)
     
-    func cellViewModel(forIndexPath indexPath: IndexPath) -> DrinkTableViewCellViewModelType?
+    func cellViewModel(forIndexPath indexPath: IndexPath) -> DrinkTableViewCellViewModelType
     
 }

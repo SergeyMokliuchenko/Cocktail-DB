@@ -13,12 +13,7 @@ class DrinksViewModel: DrinksViewModelType {
     private var dataProvider: DataProvider = RequestManager()
     private var sections: [SectionsModel] = []
     
-    func cellViewModel(forIndexPath indexPath: IndexPath) -> DrinkTableViewCellViewModelType? {
-        let drink = sections[indexPath.section].drinks[indexPath.row]
-        return DrinkTableViewCellViewModel(drink: drink)
-    }
-    
-    func takeSections() -> [SectionsModel] {
+    func getSections() -> [SectionsModel] {
         return sections
     }
     
@@ -30,26 +25,14 @@ class DrinksViewModel: DrinksViewModelType {
         return sections.filter { $0.isSelected == true }
     }
     
-    func numberOfSections() -> Int {
-        return selectedCategory().count
-    }
-    
-    func titleForHeaderInSection(section: Int) -> String {
-        return selectedCategory()[section].nameSection
-    }
-    
-    func numberOfRowsInSection(section: Int) -> Int {
-        return selectedCategory()[section].drinks.count
-    }
-    
     func pagination(forRowAt indexPath: IndexPath, completion: @escaping () -> Void) {
         
-//        if indexPath.section != indexPath.last && indexPath.row == selectedCategory()[indexPath.section].drinks.count - 1 {
-//            let name = selectedCategory()[indexPath.section + 1].nameSection
-//            loadDrinks(name: name) {
-//                completion()
-//            }
-//        }
+        if indexPath.row == selectedCategory()[indexPath.section].drinks.count - 1  {
+            guard selectedCategory().get(at: indexPath.section + 1) != nil else { return }
+            loadDrinks(name: selectedCategory()[indexPath.section + 1].nameSection) {
+                completion()
+                }
+            }
     }
     
     func loadDrinksCategories(completion: @escaping () -> Void) {
@@ -68,12 +51,17 @@ class DrinksViewModel: DrinksViewModelType {
         
         dataProvider.loadDrinks(with: name) { [unowned self] response in
             self.sections = self.sections.map { sections -> SectionsModel in
-                
+
                 return sections.nameSection == name
                     ? SectionsModel(nameSection: name, drinks: response.drinks)
                     : sections
             }
             completion()
         }
+    }
+    
+    func cellViewModel(forIndexPath indexPath: IndexPath) -> DrinkTableViewCellViewModelType {
+        let drink = sections.filter { $0.isSelected == true } [indexPath.section].drinks[indexPath.row]
+        return DrinkTableViewCellViewModel(drink: drink)
     }
 }

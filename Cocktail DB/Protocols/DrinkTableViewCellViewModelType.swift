@@ -12,6 +12,5 @@ protocol DrinkTableViewCellViewModelType: class {
     
     var name: String { get }
     var imageURL: NSURL { get }
-    func downloadImageFromURL(url: NSURL, completion: @escaping (UIImage) -> Void)
     
 }

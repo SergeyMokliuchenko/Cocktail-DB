@@ -15,6 +15,15 @@ class DrinksViewController: UIViewController {
     
     private var viewModel: DrinksViewModelType = DrinksViewModel()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        guard let name = self.viewModel.selectedCategory().first?.nameSection else { return }
+        viewModel.loadDrinks(name: name) { [unowned self] in
+            self.tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadNavigationBar()
@@ -49,33 +58,24 @@ class DrinksViewController: UIViewController {
     private func loadDrinksCategories() {
         viewModel.loadDrinksCategories() { [unowned self] in
             guard let name = self.viewModel.selectedCategory().first?.nameSection else { return }
-            self.viewModel.loadDrinks(name: name) {
-                self.tableView.reloadData()
-            }
+            self.viewModel.loadDrinks(name: name) { self.tableView.reloadData() }
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        guard let name = self.viewModel.selectedCategory().first?.nameSection else { return }
-        viewModel.loadDrinks(name: name) { [unowned self] in
-            self.tableView.reloadData()
-        }
-    }
 }
-
+    //MARK: TableView Metods
 extension DrinksViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.numberOfSections()
+        return viewModel.selectedCategory().count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return viewModel.titleForHeaderInSection(section: section)
+        return viewModel.selectedCategory()[section].nameSection
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfRowsInSection(section: section)
+        return viewModel.selectedCategory()[section].drinks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -84,14 +84,12 @@ extension DrinksViewController: UITableViewDelegate, UITableViewDataSource {
         
         guard let tableViewCell = cell else { return UITableViewCell() }
         let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
-        
         tableViewCell.viewModel = cellViewModel
         
         return tableViewCell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
         viewModel.pagination(forRowAt: indexPath) { [unowned self] in
             self.tableView.reloadData()
         }
@@ -102,7 +100,7 @@ extension DrinksViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
-
+    // MARK: NavigationBarDelegate
 extension DrinksViewController: NavigationBarDelegate {
     
     func rightAction() {
@@ -110,7 +108,7 @@ extension DrinksViewController: NavigationBarDelegate {
         let filtersViewControlelr = FiltersViewController.init()
         filtersViewControlelr.viewModel.delegate = viewModel.self
         
-        let category = viewModel.takeSections()
+        let category = viewModel.getSections()
         filtersViewControlelr.viewModel.getCategory(category: category)
         self.navigationController?.pushViewController(filtersViewControlelr, animated: true)
     }
