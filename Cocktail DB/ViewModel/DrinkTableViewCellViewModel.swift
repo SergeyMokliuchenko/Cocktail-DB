@@ -6,10 +6,9 @@
 //  Copyright © 2020 Serhii Mokliuchenko. All rights reserved.
 //
 
-import Foundation
-import Kingfisher
+import UIKit
 
-class DrinkTableViewCellViewModel: TableViewCellViewModelType {
+class DrinkTableViewCellViewModel: DrinkTableViewCellViewModelType {
     
     private var drink: Drink
     
@@ -17,25 +16,18 @@ class DrinkTableViewCellViewModel: TableViewCellViewModelType {
         return drink.name
     }
     
-    var image: UIImage? {
-        return loadImage(string: drink.imageURL)
+    var imageURL: NSURL {
+        return NSURL(string: drink.imageURL)!
     }
     
-    private func loadImage(string url: String) -> UIImage {
-        
-        var image: UIImage = UIImage()
-        guard let url: URL = URL(string: url) else { return image }
-        
-        KingfisherManager.shared.retrieveImage(with: url) { result in
-            
-            switch result {
-            case .success(let value):
-                image = value.image
-            case .failure(let error):
-                print(error)
+    func downloadImageFromURL(url: NSURL, completion: @escaping (UIImage) -> Void) {
+        DispatchQueue.global(qos: .userInteractive).async {
+            guard let data = try? Data(contentsOf: url as URL),
+            let image = UIImage(data: data) else { return }
+            DispatchQueue.main.async {
+                completion(image)
             }
         }
-        return image
     }
     
     init(drink: Drink) {

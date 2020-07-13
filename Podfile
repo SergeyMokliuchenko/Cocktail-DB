@@ -6,7 +6,6 @@ target 'Cocktail DB' do
   use_frameworks!
 
   pod 'Alamofire'
-  pod 'Kingfisher'
 
   # Pods for Cocktail DB
 

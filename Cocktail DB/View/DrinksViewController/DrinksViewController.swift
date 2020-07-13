@@ -57,12 +57,9 @@ class DrinksViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         guard let name = self.viewModel.selectedCategory().first?.nameSection else { return }
-        viewModel.loadDrinks(name: name) {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+        viewModel.loadDrinks(name: name) { [unowned self] in
+            self.tableView.reloadData()
         }
     }
 }
@@ -83,12 +80,14 @@ extension DrinksViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DrinkTableViewCell.self)) as! DrinkTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DrinkTableViewCell.self)) as? DrinkTableViewCell
         
-        let drink = viewModel.selectedCategory()[indexPath.section].drinks[indexPath.row]
-        cell.fillWith(model: drink)
+        guard let tableViewCell = cell else { return UITableViewCell() }
+        let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
         
-        return cell
+        tableViewCell.viewModel = cellViewModel
+        
+        return tableViewCell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

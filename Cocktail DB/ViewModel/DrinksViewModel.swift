@@ -13,6 +13,11 @@ class DrinksViewModel: DrinksViewModelType {
     private var dataProvider: DataProvider = RequestManager()
     private var sections: [SectionsModel] = []
     
+    func cellViewModel(forIndexPath indexPath: IndexPath) -> DrinkTableViewCellViewModelType? {
+        let drink = sections[indexPath.section].drinks[indexPath.row]
+        return DrinkTableViewCellViewModel(drink: drink)
+    }
+    
     func takeSections() -> [SectionsModel] {
         return sections
     }
@@ -39,12 +44,12 @@ class DrinksViewModel: DrinksViewModelType {
     
     func pagination(forRowAt indexPath: IndexPath, completion: @escaping () -> Void) {
         
-        if indexPath.section != indexPath.endIndex && indexPath.row == selectedCategory()[indexPath.section].drinks.count - 1 {
-
-            loadDrinks(name: selectedCategory()[indexPath.section + 1].nameSection) {
-                completion()
-            }
-        }
+//        if indexPath.section != indexPath.last && indexPath.row == selectedCategory()[indexPath.section].drinks.count - 1 {
+//            let name = selectedCategory()[indexPath.section + 1].nameSection
+//            loadDrinks(name: name) {
+//                completion()
+//            }
+//        }
     }
     
     func loadDrinksCategories(completion: @escaping () -> Void) {

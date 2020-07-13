@@ -21,13 +21,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="QDn-6O-myV">
-                        <rect key="frame" x="10" y="25" width="100" height="100"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="100" id="omr-Fy-JaX"/>
-                            <constraint firstAttribute="width" constant="100" id="zgu-rc-h0o"/>
-                        </constraints>
-                    </activityIndicatorView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3ND-zf-JGM">
                         <rect key="frame" x="20" y="25" width="100" height="100"/>
                         <constraints>
@@ -35,8 +28,8 @@
                             <constraint firstAttribute="height" constant="100" id="BEW-vj-Cdq"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8h-Qe-gC5">
-                        <rect key="frame" x="140" y="65.5" width="43" height="19"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8h-Qe-gC5">
+                        <rect key="frame" x="140" y="65.5" width="144" height="19"/>
                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -44,16 +37,14 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="q8h-Qe-gC5" firstAttribute="leading" secondItem="3ND-zf-JGM" secondAttribute="trailing" constant="20" id="1en-Nm-Pij"/>
-                    <constraint firstItem="QDn-6O-myV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="ShI-tE-Zcc"/>
                     <constraint firstItem="3ND-zf-JGM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ZAv-iX-b56"/>
                     <constraint firstItem="q8h-Qe-gC5" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="eBX-lw-Sak"/>
-                    <constraint firstItem="QDn-6O-myV" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="msq-Xb-jq1"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="q8h-Qe-gC5" secondAttribute="trailing" constant="20" id="hXI-bO-k7n"/>
                     <constraint firstItem="3ND-zf-JGM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="xzt-UK-ejr"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="activityIndicator" destination="QDn-6O-myV" id="cig-Ye-wvs"/>
                 <outlet property="drinkImageView" destination="3ND-zf-JGM" id="vwl-aB-3DE"/>
                 <outlet property="drinkNameLabel" destination="q8h-Qe-gC5" id="LpJ-WY-5pg"/>
             </connections>

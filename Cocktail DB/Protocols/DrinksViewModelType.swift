@@ -1,5 +1,5 @@
 //
-//  TableViewViewModelType.swift
+//  DrinksViewModelType.swift
 //  Cocktail DB
 //
 //  Created by Serhii Mokliuchenko on 10.07.2020.
@@ -26,6 +26,6 @@ protocol DrinksViewModelType: FilterCategoryDelegate {
     
     func loadDrinks(name: String, completion: @escaping () -> Void)
     
-    //func selectedFilters(sections: [SectionsModel])
+    func cellViewModel(forIndexPath indexPath: IndexPath) -> DrinkTableViewCellViewModelType?
     
 }

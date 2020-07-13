@@ -3,4 +3,102 @@
    uuid = "8B1DA0F7-8FFC-4064-87D4-7F382B4D221E"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "637E2670-06F6-4CAA-A7A3-E7E50409AADA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cocktail DB/ViewModel/DrinksViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "selectedCategory()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "637E2670-06F6-4CAA-A7A3-E7E50409AADA - a97fcd34306f48ea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cocktail_DB.DrinksViewModel.selectedCategory() -&gt; Swift.Array&lt;Cocktail_DB.SectionsModel&gt;"
+                  moduleName = "Cocktail DB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/s.mokliuchenko/Cocktail-DB/Cocktail%20DB/ViewModel/DrinksViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "31">
+               </Location>
+               <Location
+                  uuid = "637E2670-06F6-4CAA-A7A3-E7E50409AADA - bb19e35a966fe545"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Cocktail_DB.SectionsModel) -&gt; Swift.Bool in Cocktail_DB.DrinksViewModel.selectedCategory() -&gt; Swift.Array&lt;Cocktail_DB.SectionsModel&gt;"
+                  moduleName = "Cocktail DB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/s.mokliuchenko/Cocktail-DB/Cocktail%20DB/ViewModel/DrinksViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "42">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "19420103-888B-4793-B3F3-F69641BD5B72"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cocktail DB/ViewModel/DrinksViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "selectedCategory()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "166AE06C-D92E-496A-9B04-2194F7B474B4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cocktail DB/ViewModel/DrinksViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "pagination(forRowAt:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1172E593-30A3-4DEE-903D-63715F44AB32"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cocktail DB/ViewModel/DrinksViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "pagination(forRowAt:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

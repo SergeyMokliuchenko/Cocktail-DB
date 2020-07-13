@@ -7,48 +7,25 @@
 //
 
 import UIKit
-import Kingfisher
 
 class DrinkTableViewCell: UITableViewCell {
     
     @IBOutlet weak var drinkImageView: UIImageView!
     @IBOutlet weak var drinkNameLabel: UILabel!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-//    weak var viewModel: TableViewCellViewModelType? {
-//        willSet(viewModel) {
-//            guard let viewModel = viewModel else { return }
-//            drinkImageView.image = viewModel.image
-//            drinkNameLabel.text = viewModel.name
-//            activityIndicator.stopAnimating()
-//        }
-//    }
+    weak var viewModel: DrinkTableViewCellViewModelType? {
+        willSet(viewModel) {
+            guard let viewModel = viewModel else { return }
+            drinkNameLabel.text = viewModel.name
+            viewModel.downloadImageFromURL(url: viewModel.imageURL) { [weak self] image in
+                self?.drinkImageView.image = image
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
-        activityIndicator.startAnimating()
     }
     
-    func fillWith(model: Drink) {
-        self.drinkImageView.image = loadImage(string: model.imageURL)
-        self.drinkNameLabel.text = model.name
-    }
-    
-    private func loadImage(string url: String) -> UIImage {
-        
-        var image: UIImage = UIImage()
-        guard let url: URL = URL(string: url) else { return image }
-        
-        KingfisherManager.shared.retrieveImage(with: url) { result in
-            
-            switch result {
-            case .success(let value):
-                image = value.image
-            case .failure(let error):
-                print(error)
-            }
-        }
-        return image
-    }
 }

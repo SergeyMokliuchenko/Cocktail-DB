@@ -48,7 +48,7 @@ class FiltersViewController: UIViewController {
      
     @IBAction func applyButtonAction(_ sender: UIButton) {
         let selected = viewModel.getSelectedCategory()
-        viewModel.delegate.selectedFilters(sections: selected)
+        self.viewModel.delegate.selectedFilters(sections: selected)
         navigationController?.popViewController(animated: true)
     }
 }
